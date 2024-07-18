@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router';
 
 function AuthzLayout() {
-  return <Outlet />;
+    return <Outlet />;
 }
 
 export default AuthzLayout;
