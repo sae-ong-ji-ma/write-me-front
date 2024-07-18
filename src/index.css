@@ -12,3 +12,8 @@ body {
     -ms-overflow-style: none;
     font-display: swap;
 }
+
+#root {
+    width: 100vw;
+    height: 100vh;
+}

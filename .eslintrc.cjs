@@ -25,6 +25,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'off',
     'react-refresh/only-export-components': 'warn',
     'tailwindcss/no-custom-classname': 'off',
+    "tailwindcss/classnames-order": ['warn', { "config": "tailwind.config.js" }],
   },
-  ignorePatterns: [".eslintrc.cjs", "vite.config.ts"],
+  ignorePatterns: [".eslintrc.cjs", "vite.config.ts", "tailwind.config.js"],
 };
