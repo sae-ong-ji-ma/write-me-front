@@ -1,5 +1,6 @@
 module.exports = {
-    env: { browser: true, es2020: true, amd: true, node: true },
+    root: true,
+    env: { browser: true, es2020: true },
     extends: [
         'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
@@ -9,14 +10,9 @@ module.exports = {
         'plugin:import/recommended',
         'plugin:import/typescript',
     ],
+    ignorePatterns: ['/*', '!/src'],
     parser: '@typescript-eslint/parser',
-    parserOptions: {
-        createDefaultProgram: true,
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-        project: './tsconfig.json',
-    },
-    plugins: ['react-refresh'],
+    plugins: ['react-refresh', 'import'],
     rules: {
         'prettier/prettier': [
             'error',
@@ -68,5 +64,4 @@ module.exports = {
             },
         },
     },
-    ignorePatterns: ['.eslintrc.cjs', 'vite.config.ts', 'tailwind.config.js'],
 };

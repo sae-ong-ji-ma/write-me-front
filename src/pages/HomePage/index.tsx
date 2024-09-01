@@ -10,7 +10,7 @@ const HomePage = () => {
                     <br />
                     오늘 일기 완성!
                 </p>
-                <p className="mt-[.625rem] text-[1rem] text-gray-400">딱 10초 걸려요</p>
+                <p className="mt-[.625rem] text-[1rem] text-gray-400">일기 신청까지 딱 10초 걸려요</p>
             </div>
         </main>
     );
