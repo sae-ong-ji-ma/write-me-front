@@ -1,7 +1,7 @@
 const Header = () => {
     return (
-        <header className="w-full border-b-[0.3px] border-b-black-3 px-[16px] py-[9px]">
-            <p className="text-[18px] font-bold">WRTE</p>
+        <header className="fixed left-0 top-0 h-10 w-full border-b-[.0187rem] border-b-black-3 bg-white px-4 py-[.5625rem]">
+            <p className="text-[1.125rem] font-bold">WRTE</p>
         </header>
     );
 };

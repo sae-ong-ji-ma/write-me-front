@@ -1,7 +1,7 @@
+/* eslint-disable import/no-unresolved */
 import './ReloadPrompt.css';
-
-import { useRegisterSW } from 'virtual:pwa-register/react';
 import { pwaInfo } from 'virtual:pwa-info';
+import { useRegisterSW } from 'virtual:pwa-register/react';
 
 console.log(pwaInfo);
 

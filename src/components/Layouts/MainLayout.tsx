@@ -1,12 +1,14 @@
+import { Outlet } from 'react-router';
 import Header from '@components/Header';
 import NavigationBar from '@components/NavigationBar';
-import { Outlet } from 'react-router';
 
 function MainLayout() {
     return (
-        <div className={`h-real-screen w-screen bg-main-bg`}>
+        <div className={`flex h-real-screen w-screen flex-col pb-[87px] pt-10`}>
             <Header />
-            <Outlet />
+            <div className="flex-1">
+                <Outlet />
+            </div>
             <NavigationBar />
         </div>
     );

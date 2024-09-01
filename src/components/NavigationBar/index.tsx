@@ -1,5 +1,7 @@
-import ROUTE from '@consts/path';
 import { useNavigate } from 'react-router';
+import RecentIcon from '@assets/svg/recent-icon.svg?react';
+import SearchIcon from '@assets/svg/search-icon.svg?react';
+import ROUTE from '@consts/path';
 
 type NavigationItem = {
     id: string;
@@ -13,14 +15,15 @@ const NAVIGATION_ITEMS = [
         id: 'recent',
         label: '최근',
         path: ROUTE.ROOT,
-        icon: <div className="m-[2px] size-[24px] bg-black" />,
+        icon: <RecentIcon />,
     },
     {
         id: 'cta',
+        path: ROUTE.UPLOAD_IMAGE,
         icon: (
-            <div className="relative size-[46px] rounded-[16px] bg-main-1">
-                <div className="absolute h-[16px] w-[2px] rounded-[10px] bg-white absolute-center" />
-                <div className="absolute h-[2px] w-[16px] rounded-[10px] bg-white absolute-center" />
+            <div className="relative size-[2.875rem] rounded-[1.125rem] bg-WRTE-Blue-400">
+                <div className="absolute h-4 w-[.125rem] rounded-[.625rem] bg-white absolute-center" />
+                <div className="absolute h-[.125rem] w-4 rounded-[.625rem] bg-white absolute-center" />
             </div>
         ),
     },
@@ -28,7 +31,7 @@ const NAVIGATION_ITEMS = [
         id: 'browse',
         label: '둘러보기',
         path: ROUTE.BROWSE,
-        icon: <div className="m-[2px] size-[24px] bg-black" />,
+        icon: <SearchIcon />,
     },
 ];
 
@@ -44,9 +47,9 @@ const NavigationItem = ({
     onClick?: () => void;
 }) => {
     return (
-        <button className="flex flex-col items-center gap-[4px]" onClick={onClick}>
+        <button className="flex w-[2.1875rem] flex-col items-center gap-[.25rem]" onClick={onClick}>
             {icon}
-            <span className={`text-[10px] font-medium ${active ? 'text-black' : 'text-gray-400'}`}>{label}</span>
+            <span className={`text-[.625rem] font-medium ${active ? 'text-black' : 'text-gray-400'}`}>{label}</span>
         </button>
     );
 };
@@ -56,7 +59,7 @@ const NavigationBar = () => {
     const navigate = useNavigate();
 
     return (
-        <div className="fixed bottom-0 flex h-[87px] w-full items-start justify-around border-t-[0.3px] border-t-black-2 pt-[8px]">
+        <div className="fixed bottom-0 flex h-[5.4375rem] w-full items-start justify-around border-t-[.0187rem] border-t-black-2 pt-[.75rem]">
             {NAVIGATION_ITEMS.map(({ id, icon, label, path }) => (
                 <NavigationItem
                     key={id}
