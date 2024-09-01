@@ -1,21 +1,14 @@
+import axios from 'axios';
 import { enableMapSet } from 'immer';
 
-export default function initializeApp() {
+export default async function initializeApp() {
     enableMapSet();
 
-    // if (import.meta.env.PROD) {
-    //   // GA 관련 초기화
-    //   ReactGA.initialize(import.meta.env.VITE_GA_TRACKING_ID, { gaOptions: {} });
+    if (import.meta.env.DEV) {
+        const { worker } = await import('./mocks');
 
-    //   const history = createBrowserHistory();
-    //   history.listen(async (response) => {
-    //     ReactGA.send({ hitType: 'pageview', page: response.location.pathname });
-    //   });
-
-    //   // Airbridge 관련 초기화
-    //   airbridge.init({
-    //     app: import.meta.env.VITE_AIRBRIDGE_NAME,
-    //     webToken: import.meta.env.VITE_AIRBRIDGE_WEB_TOKEN,
-    //   });
-    // }
+        return worker.start();
+    } else {
+        axios.defaults.baseURL = 'http://some.api.url';
+    }
 }

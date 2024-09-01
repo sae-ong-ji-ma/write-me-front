@@ -35,7 +35,9 @@
       "@types/*": ["types/*"],
       "@types": ["types"],
       "@pages/*": ["pages/*"],
-      "@pages": ["pages"]
+      "@pages": ["pages"],
+      "@mocks/*": ["mocks/*"],
+      "@mocks": ["mocks"]
     }
   },
   "include": ["src"],
