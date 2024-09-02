@@ -7,20 +7,20 @@ type NavigationItem = {
     id: string;
     label?: string;
     path?: string;
-    icon?: React.ReactNode;
+    Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
 };
 
-const NAVIGATION_ITEMS = [
+const NAVIGATION_ITEMS: NavigationItem[] = [
     {
         id: 'recent',
         label: '최근',
         path: ROUTE.ROOT,
-        icon: <RecentIcon />,
+        Icon: RecentIcon,
     },
     {
         id: 'cta',
         path: ROUTE.UPLOAD_IMAGE,
-        icon: (
+        Icon: () => (
             <div className="relative size-[2.875rem] rounded-[1.125rem] bg-WRTE-Blue-400">
                 <div className="absolute h-4 w-[.125rem] rounded-[.625rem] bg-white absolute-center" />
                 <div className="absolute h-[.125rem] w-4 rounded-[.625rem] bg-white absolute-center" />
@@ -31,25 +31,28 @@ const NAVIGATION_ITEMS = [
         id: 'browse',
         label: '둘러보기',
         path: ROUTE.BROWSE,
-        icon: <SearchIcon />,
+        Icon: SearchIcon,
     },
 ];
 
 const NavigationItem = ({
     active,
     label,
-    icon,
+    Icon,
     onClick,
 }: {
     active: boolean;
     label?: string;
-    icon?: React.ReactNode;
+    Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
     onClick?: () => void;
 }) => {
     return (
-        <button className="flex w-[2.1875rem] flex-col items-center gap-[.25rem]" onClick={onClick}>
-            {icon}
-            <span className={`text-[.625rem] font-medium ${active ? 'text-black' : 'text-gray-400'}`}>{label}</span>
+        <button
+            className={`flex w-[2.1875rem] flex-col items-center gap-[.25rem] ${active ? 'text-WRTE-Black' : 'text-WRTE-Light-Gray-300'}`}
+            onClick={onClick}
+        >
+            {Icon ? <Icon /> : null}
+            <span className={`text-[.625rem] font-medium`}>{label}</span>
         </button>
     );
 };
@@ -59,13 +62,13 @@ const NavigationBar = () => {
     const navigate = useNavigate();
 
     return (
-        <div className="fixed bottom-0 flex h-[5.4375rem] w-full items-start justify-around border-t-[.0187rem] border-t-black-2 pt-[.75rem]">
-            {NAVIGATION_ITEMS.map(({ id, icon, label, path }) => (
+        <div className="fixed bottom-0 z-10 flex h-[5.4375rem] w-full items-start justify-around border-t-[.0187rem] border-t-black-2 bg-WRTE-WHITE pt-[.75rem]">
+            {NAVIGATION_ITEMS.map(({ id, Icon, label, path }) => (
                 <NavigationItem
                     key={id}
                     label={label}
                     active={pathname === path}
-                    icon={icon}
+                    Icon={Icon}
                     onClick={() => path && navigate(path)}
                 />
             ))}

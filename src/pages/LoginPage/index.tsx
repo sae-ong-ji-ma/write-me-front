@@ -1,11 +1,11 @@
 import KaKaoIcon from '@assets/svg/kakao-icon.svg?react';
-import LogoBlack from '@assets/svg/logo-black.svg?react';
+import LogoIcon from '@assets/svg/logo-icon.svg?react';
 
 const LoginPage = () => {
     return (
         <main className="flex size-full flex-col items-stretch justify-between bg-white">
             <div className="mt-[11.25rem] flex flex-col items-center">
-                <LogoBlack width="11.25rem" height="auto" />
+                <LogoIcon width="11.25rem" height="auto" className="text-WRTE-Black" />
                 <p className="mt-[.9375rem] text-[1rem] font-medium text-black">AI가 써주는 근사한 일기</p>
             </div>
 
