@@ -1,4 +1,4 @@
-import { TValues } from 'utils/types';
+import type { TValues } from 'utils/types';
 
 export const STEPS = {
     SELECT: 'select',

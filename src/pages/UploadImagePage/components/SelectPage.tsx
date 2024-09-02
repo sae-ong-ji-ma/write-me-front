@@ -1,12 +1,11 @@
-import { memo } from 'react';
+import type { TSteps } from '../conts';
+import { memo, useCallback } from 'react';
 import { useNavigate } from 'react-router';
 import Button from '@components/Button';
-import { STEPS, TSteps } from '../conts';
-import { ISelectedImage, useSelectImage } from '../hooks/useSelectImage';
+import { MAX_LENGTH, MIN_LENGTH } from '../consts';
+import { STEPS } from '../conts';
+import useSelectedImageStore, { type ISelectedImage } from '../stores/useSelectedImageStore';
 import { Grid, GridItem } from './Grid';
-
-const MIN_LENGTH = 3;
-const MAX_LENGTH = 10;
 
 interface IArrangePageProps {
     changeStep: (step: TSteps) => void;
@@ -36,16 +35,13 @@ const ImageComponent = ({ image, order, onClick }: IImageComponentProps) => {
 };
 
 const ArrangePage: React.FC<IArrangePageProps> = ({ changeStep }) => {
-    const {
-        state: { images, selectedCount },
-        actions: { addImage, selectImage },
-    } = useSelectImage({ maxLength: MAX_LENGTH });
+    const { images, selectedCount, addImage, selectImage } = useSelectedImageStore();
 
     const navigate = useNavigate();
 
-    const handleClickBack = () => {
+    const handleClickBack = useCallback(() => {
         navigate(-1);
-    };
+    }, [navigate]);
 
     return (
         <main className="flex size-full flex-col items-stretch">

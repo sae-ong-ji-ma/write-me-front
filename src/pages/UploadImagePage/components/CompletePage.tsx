@@ -1,7 +1,7 @@
+import type { TSteps } from '../conts';
 import { useNavigate } from 'react-router';
 import Button from '@components/Button';
 import Header from '@components/Header';
-import { TSteps } from '../conts';
 
 interface Diary {
     thumbnail: string;

@@ -14,6 +14,7 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     plugins: ['react-refresh', 'import'],
     rules: {
+        '@typescript-eslint/consistent-type-imports': 'error',
         'prettier/prettier': [
             'error',
             {

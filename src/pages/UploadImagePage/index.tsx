@@ -1,8 +1,9 @@
+import type { TSteps } from './conts';
 import { useState } from 'react';
 import { match } from 'ts-pattern';
 import CompletePage from './components/CompletePage';
 import SelectPage from './components/SelectPage';
-import { STEPS, TSteps } from './conts';
+import { STEPS } from './conts';
 
 const UploadImagePage = () => {
     const [currentStep, setCurrentStep] = useState<TSteps>(STEPS.SELECT);

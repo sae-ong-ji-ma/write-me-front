@@ -30,7 +30,8 @@
     "tailwind-merge": "^2.5.2",
     "ts-pattern": "^5.2.0",
     "uuid": "^10.0.0",
-    "zustand": "^4.5.4"
+    "zustand": "^4.5.4",
+    "zustand-computed-state": "^0.1.8"
   },
   "devDependencies": {
     "@rollup/plugin-replace": "^5.0.7",

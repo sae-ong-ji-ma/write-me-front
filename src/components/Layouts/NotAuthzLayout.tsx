@@ -1,7 +1,11 @@
 import { Outlet } from 'react-router';
 
 function NotAuthzLayout() {
-    return <Outlet />;
+    return (
+        <div className="h-real-screen w-screen">
+            <Outlet />
+        </div>
+    );
 }
 
 export default NotAuthzLayout;

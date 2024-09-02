@@ -62,6 +62,9 @@ importers:
       zustand:
         specifier: ^4.5.4
         version: 4.5.4(@types/react@18.3.3)(immer@10.1.1)(react@18.3.1)
+      zustand-computed-state:
+        specifier: ^0.1.8
+        version: 0.1.8(zustand@4.5.4(@types/react@18.3.3)(immer@10.1.1)(react@18.3.1))
     devDependencies:
       '@rollup/plugin-replace':
         specifier: ^5.0.7
@@ -3726,6 +3729,12 @@ packages:
   yoctocolors-cjs@2.1.2:
     resolution: {integrity: sha512-cYVsTjKl8b+FrnidjibDWskAv7UKOfcwaVZdp/it9n1s9fU3IkgDbhdIRKCW4JDsAlECJY0ytoVPT3sK6kideA==}
     engines: {node: '>=18'}
+
+  zustand-computed-state@0.1.8:
+    resolution: {integrity: sha512-df6XMpo7ZhFRvs3gXENTbZebhAuwg37S/Bk0G94z4QfwzmoB3z12jdmJBoItxDOm7adjOkjk1kxyPf/WZiLQvw==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      zustand: ^4.3.8
 
   zustand@4.5.4:
     resolution: {integrity: sha512-/BPMyLKJPtFEvVL0E9E9BTUM63MNyhPGlvxk1XjrfWTUlV+BR8jufjsovHzrtR6YNcBEcL7cMHovL1n9xHawEg==}
@@ -7607,6 +7616,10 @@ snapshots:
   yocto-queue@0.1.0: {}
 
   yoctocolors-cjs@2.1.2: {}
+
+  zustand-computed-state@0.1.8(zustand@4.5.4(@types/react@18.3.3)(immer@10.1.1)(react@18.3.1)):
+    dependencies:
+      zustand: 4.5.4(@types/react@18.3.3)(immer@10.1.1)(react@18.3.1)
 
   zustand@4.5.4(@types/react@18.3.3)(immer@10.1.1)(react@18.3.1):
     dependencies:
